@@ -4,47 +4,82 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mergington High School Activities</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles-role-access.css" />
   </head>
   <body>
-    <header>
-      <h1>Mergington High School</h1>
-      <h2>Extracurricular Activities</h2>
+    <header class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Mergington High School</p>
+        <h1>Extracurricular Activities</h1>
+        <p class="subtitle">Students request access, and teachers approve or manage rosters when needed.</p>
+      </div>
+      <div class="hero-actions">
+        <div id="role-badge" class="role-badge">Student</div>
+        <button id="auth-button" type="button">Teacher login</button>
+        <button id="logout-button" type="button" class="secondary hidden">Log out</button>
+      </div>
     </header>
 
     <main>
       <section id="activities-container">
-        <h3>Available Activities</h3>
+        <div class="section-heading">
+          <h3>Available Activities</h3>
+          <p>Review approvals, pending requests, and current capacity for each activity.</p>
+        </div>
         <div id="activities-list">
-          <!-- Activities will be loaded here -->
           <p>Loading activities...</p>
         </div>
       </section>
 
       <section id="signup-container">
-        <h3>Sign Up for an Activity</h3>
+        <div class="section-heading">
+          <h3 id="signup-title">Request Access</h3>
+          <p id="signup-description">Students request access. Teachers can register students directly after logging in.</p>
+        </div>
         <form id="signup-form">
           <div class="form-group">
-            <label for="email">Student Email:</label>
+            <label for="email" id="email-label">Student Email:</label>
             <input type="email" id="email" required placeholder="your-email@mergington.edu" />
           </div>
           <div class="form-group">
             <label for="activity">Select Activity:</label>
             <select id="activity" required>
               <option value="">-- Select an activity --</option>
-              <!-- Activity options will be loaded here -->
             </select>
           </div>
-          <button type="submit">Sign Up</button>
+          <button type="submit" id="signup-button">Request Access</button>
         </form>
         <div id="message" class="hidden"></div>
       </section>
     </main>
 
+    <div id="auth-modal" class="modal hidden" aria-hidden="true">
+      <div class="modal-card">
+        <div class="modal-header">
+          <div>
+            <p class="eyebrow">Teacher access</p>
+            <h3>Sign in to manage activity access</h3>
+          </div>
+          <button id="close-auth-modal" type="button" class="ghost-button">Close</button>
+        </div>
+        <form id="auth-form">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" required placeholder="mrs_parker" />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" required placeholder="password" />
+          </div>
+          <button type="submit">Log in</button>
+        </form>
+      </div>
+    </div>
+
     <footer>
       <p>&copy; 2026 Mergington High School</p>
     </footer>
 
-    <script src="app.js"></script>
+    <script src="app-role-access.js"></script>
   </body>
 </html>
