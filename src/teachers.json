@@ -1,0 +1,16 @@
+{
+  "teachers": [
+    {
+      "username": "mrs_parker",
+      "password": "parker123",
+      "display_name": "Mrs. Parker",
+      "role": "organizer"
+    },
+    {
+      "username": "principal_garcia",
+      "password": "garcia123",
+      "display_name": "Principal Garcia",
+      "role": "admin"
+    }
+  ]
+}
